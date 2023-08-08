@@ -36,6 +36,7 @@ def play():
                 if PLAY_BACK.checkForInput(PLAY_MOUSE_POS):
                     main_menu()
 
+        
         pygame.display.update()
     
 def options():
