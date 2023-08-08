@@ -66,11 +66,11 @@ def options():
 
 def main_menu():
     while True:
-        SCREEN.blit(BG, (0, 0))
+        SCREEN.fill(("#2a9df4"))
 
         MENU_MOUSE_POS = pygame.mouse.get_pos()
 
-        MENU_TEXT = get_font(100).render("MAIN MENU", True, "#b68f40")
+        MENU_TEXT = get_font(100).render("MAIN MENU", True, "black")
         MENU_RECT = MENU_TEXT.get_rect(center=(640, 100))
 
         PLAY_BUTTON = Button(image=pygame.image.load("/Users/ogvie/Desktop/Silicon Showdown/Play Rect.png"), pos=(640, 250), 
