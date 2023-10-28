@@ -1,105 +1,44 @@
-import pygame, sys
-from button import Button
-from os import path
+from tkinter import* 
+from tkinter import ttk
+import ttkbootstrap as tb
+import sv_ttk
 
-pygame.init()
+root = Tk()
+root.geometry('1920x1080')
+root.eval('tk::PlaceWindow . center')
 
-SCREEN = pygame.display.set_mode((1280, 720))
-pygame.display.set_caption("Menu")
+sv_ttk
 
-BG = pygame.image.load("/Users/ogvie/Desktop/Silicon Showdown/background.png")
-
-def get_font(size): # Returns Press-Start-2P in the desired size
-    return pygame.font.Font("/Users/ogvie/Desktop/Silicon Showdown/LEMONMILK-Bold.otf", size)
-
-def play():
-    while True:
-        PLAY_MOUSE_POS = pygame.mouse.get_pos()
-
-        SCREEN.fill("black")
-
-        PLAY_TEXT = get_font(45).render("This is the PLAY screen.", True, "White")
-        PLAY_RECT = PLAY_TEXT.get_rect(center=(640, 260))
-        SCREEN.blit(PLAY_TEXT, PLAY_RECT)
-
-        PLAY_BACK = Button(image=None, pos=(640, 460), 
-                            text_input="BACK", font=get_font(75), base_color="White", hovering_color="Green")
-
-        PLAY_BACK.changeColor(PLAY_MOUSE_POS)
-        PLAY_BACK.update(SCREEN)
-
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                if PLAY_BACK.checkForInput(PLAY_MOUSE_POS):
-                    main_menu()
-
-        
-        pygame.display.update()
-    
-def options():
-    while True:
-        OPTIONS_MOUSE_POS = pygame.mouse.get_pos()
-
-        SCREEN.fill("white")
-
-        OPTIONS_TEXT = get_font(45).render("This is the OPTIONS screen.", True, "Black")
-        OPTIONS_RECT = OPTIONS_TEXT.get_rect(center=(640, 260))
-        SCREEN.blit(OPTIONS_TEXT, OPTIONS_RECT)
-
-        OPTIONS_BACK = Button(image=None, pos=(640, 460), 
-                            text_input="BACK", font=get_font(75), base_color="Black", hovering_color="Green")
-
-        OPTIONS_BACK.changeColor(OPTIONS_MOUSE_POS)
-        OPTIONS_BACK.update(SCREEN)
-
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                if OPTIONS_BACK.checkForInput(OPTIONS_MOUSE_POS):
-                    main_menu()
-
-        pygame.display.update()
+def clear():
+    for item in root.winfo_children():
+        item. destroy()
 
 def main_menu():
-    while True:
-        SCREEN.fill(("#2a9df4"))
 
-        MENU_MOUSE_POS = pygame.mouse.get_pos()
+    # Clear screen
+    clear()
+    sv_ttk.set_theme("dark")
+    # Add new screen
+    playbtn = Button(root, text="Play", command=play)
+    optionsbtn = Button(root, text="Options")
+    exitbtn = Button(root, text='Exit', command=root.destroy)
 
-        MENU_TEXT = get_font(100).render("MAIN MENU", True, "black")
-        MENU_RECT = MENU_TEXT.get_rect(center=(640, 100))
+    playbtn.pack(side='top')
+    optionsbtn.pack(side='top')
+    exitbtn.pack(side='top')
 
-        PLAY_BUTTON = Button(image=pygame.image.load("/Users/ogvie/Desktop/Silicon Showdown/Play Rect.png"), pos=(640, 250), 
-                            text_input="PLAY", font=get_font(75), base_color="#d7fcd4", hovering_color="White")
-        OPTIONS_BUTTON = Button(image=pygame.image.load("/Users/ogvie/Desktop/Silicon Showdown/Options Rect.png"), pos=(640, 400), 
-                            text_input="OPTIONS", font=get_font(75), base_color="#d7fcd4", hovering_color="White")
-        QUIT_BUTTON = Button(image=pygame.image.load("/Users/ogvie/Desktop/Silicon Showdown/Quit Rect.png"), pos=(640, 550), 
-                            text_input="QUIT", font=get_font(75), base_color="#d7fcd4", hovering_color="White")
+def play():
+    # Clear screen
+    clear()
 
-        SCREEN.blit(MENU_TEXT, MENU_RECT)
+    # Add new screen
+    text = Label(root, text="Play!")
+    playbtn = Button(root, text="go back", command=main_menu)
 
-        for button in [PLAY_BUTTON, OPTIONS_BUTTON, QUIT_BUTTON]:
-            button.changeColor(MENU_MOUSE_POS)
-            button.update(SCREEN)
-        
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                if PLAY_BUTTON.checkForInput(MENU_MOUSE_POS):
-                    play()
-                if OPTIONS_BUTTON.checkForInput(MENU_MOUSE_POS):
-                    options()
-                if QUIT_BUTTON.checkForInput(MENU_MOUSE_POS):
-                    pygame.quit()
-                    sys.exit()
+    text.pack(side="top")
+    playbtn.pack(side='top')
 
-        pygame.display.update()
+
 
 main_menu()
+root.mainloop()
