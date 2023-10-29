@@ -26,7 +26,7 @@ root.rowconfigure(7, weight=1)
 root.rowconfigure(8, weight=1)
 
 bluestyle = Style()
-bluestyle.configure()
+bluestyle.configure("")
 
 class JeopardyGame:
     def __init__(self, root):
