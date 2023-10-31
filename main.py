@@ -79,7 +79,7 @@ def main_menu():
 
     root.title("Silicon Showdown - Main Menu")
 
-    playbtn = Button(root, text="Play", command=singleplayer, font=("LEMONMILK-Regular.otf", 40), width=10, height=2)
+    playbtn = Button(root, text="Play", command=topicselector, font=("LEMONMILK-Regular.otf", 40), width=10, height=2)
     optionsbtn = Button(root, text="Options", command=options, font=("LEMONMILK-Regular.otf", 40), width=10, height=2)
     exitbtn = Button(root, text='Exit', command=root.destroy, font=("LEMONMILK-Regular.otf", 40), width=10, height=2)
  
@@ -87,7 +87,7 @@ def main_menu():
     optionsbtn.pack(side='top', padx=10, pady=10)
     exitbtn.pack(side='top', padx=10, pady=10)
 
-def singleplayer():
+def topicselector():
     clear()
 
     root.title("Silicon Showdown - Topic Selector")
@@ -138,7 +138,7 @@ def oneone():
     root.rowconfigure(7, weight=1)
     root.rowconfigure(8, weight=1)
 
-    backbtn = Button(root, text="Back", font=("font2.ttf", 20), command=singleplayer)
+    backbtn = Button(root, text="Back", font=("font2.ttf", 20), command=topicselector)
     backbtn.grid(row=8, column=0, columnspan=6)
 
     SiliconShowdown(root, custom_categories11, questions11, answers11)
