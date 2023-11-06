@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import simpledialog
 from tkinter import ttk
 import customtkinter
+import requests
 
 mycolour = "#383434"
 mycolour2 = "#ececec"
@@ -85,11 +86,13 @@ def main_menu():
     optionsbtn = Button(root, text="Options", command=options, font=("LEMONMILK-Regular.otf", 40), width=10, height=2)
     aboutbtn = Button(root, text="About", command=about, font=("LEMONMILK-Regular.otf", 40), width=10, height=2)
     exitbtn = Button(root, text='Exit', command=root.destroy, font=("LEMONMILK-Regular.otf", 40), width=10, height=2)
- 
+    eastereggbtn = Button(root, text="???", command=easteregg)
+
     playbtn.pack(side='top', padx=10, pady=10)
     optionsbtn.pack(side='top', padx=10, pady=10)
     aboutbtn.pack(side='top', padx=10, pady=10)
     exitbtn.pack(side='top', padx=10, pady=10)
+    eastereggbtn.pack(side='top')
 
 def topicselector():
     clear()
@@ -181,6 +184,181 @@ def about():
 
     about_label.pack(side='top', padx=10, pady=10)
     backbtn.pack(side='top', padx=10, pady=10)
+
+def easteregg():
+    clear()
+
+    root.title("Silicon Showdown - ???")
+
+    root.columnconfigure(0, weight=1)
+    root.columnconfigure(1, weight=1)
+    root.columnconfigure(2, weight=1)
+    root.columnconfigure(3, weight=1)
+    root.columnconfigure(4, weight=1)
+    root.columnconfigure(5, weight=1)
+
+    root.rowconfigure(0, weight=1)
+    root.rowconfigure(1, weight=1)
+    root.rowconfigure(2, weight=1)
+    root.rowconfigure(3, weight=1)
+    root.rowconfigure(4, weight=1)
+    root.rowconfigure(5, weight=1)
+    root.rowconfigure(6, weight=1)
+    root.rowconfigure(7, weight=1)
+    root.rowconfigure(8, weight=1)
+
+    backbtn1 = Button(root, text="Back", command=main_menu)
+    backbtn2 = Button(root, text="Back", command=main_menu)
+    backbtn3 = Button(root, text="Back", command=main_menu)
+    backbtn4 = Button(root, text="Back", command=main_menu)
+    backbtn5 = Button(root, text="Back", command=main_menu)
+    backbtn6 = Button(root, text="Back", command=main_menu)
+    backbtn7 = Button(root, text="Back", command=main_menu)
+    backbtn8 = Button(root, text="Back", command=main_menu)
+    backbtn9 = Button(root, text="Back", command=main_menu)
+    backbtn10 = Button(root, text="Back", command=main_menu)
+    backbtn11 = Button(root, text="Back", command=main_menu)
+    backbtn12 = Button(root, text="Back", command=main_menu)
+    backbtn13 = Button(root, text="Back", command=main_menu)
+    backbtn14 = Button(root, text="Back", command=main_menu)
+    backbtn15 = Button(root, text="Back", command=main_menu)
+    backbtn16 = Button(root, text="Back", command=main_menu)
+    backbtn17 = Button(root, text="Back", command=main_menu)
+    backbtn18 = Button(root, text="Back", command=main_menu)
+    backbtn19 = Button(root, text="Back", command=main_menu)
+    backbtn20 = Button(root, text="Back", command=main_menu)
+    backbtn21 = Button(root, text="Back", command=main_menu)
+    backbtn22 = Button(root, text="Back", command=main_menu)
+    backbtn23 = Button(root, text="Back", command=main_menu)
+    backbtn24 = Button(root, text="Back", command=main_menu)
+    backbtn25 = Button(root, text="Back", command=main_menu)
+    backbtn26 = Button(root, text="Back", command=main_menu)
+    backbtn27 = Button(root, text="Back", command=main_menu)
+    backbtn28 = Button(root, text="Back", command=main_menu)
+    backbtn29 = Button(root, text="Back", command=main_menu)
+    backbtn30 = Button(root, text="Back", command=main_menu)
+    backbtn31 = Button(root, text="Back", command=main_menu)
+    backbtn32 = Button(root, text="Back", command=main_menu)
+    backbtn33 = Button(root, text="Back", command=main_menu)
+    backbtn34 = Button(root, text="Back", command=main_menu)
+    backbtn35 = Button(root, text="Back", command=main_menu)
+    backbtn36 = Button(root, text="Back", command=main_menu)
+    backbtn37 = Button(root, text="Back", command=main_menu)
+    backbtn38 = Button(root, text="Back", command=main_menu)
+    backbtn39 = Button(root, text="Back", command=main_menu)
+    backbtn40 = Button(root, text="Back", command=main_menu)
+    backbtn41 = Button(root, text="Back", command=main_menu)
+    backbtn42 = Button(root, text="Back", command=main_menu)
+    backbtn43 = Button(root, text="Back", command=main_menu)
+    backbtn44 = Button(root, text="Back", command=main_menu)
+    backbtn45 = Button(root, text="Back", command=main_menu)
+    backbtn46 = Button(root, text="Back", command=main_menu)
+    backbtn47 = Button(root, text="Back", command=main_menu)
+    backbtn48 = Button(root, text="Back", command=main_menu)
+    backbtn49 = Button(root, text="Back", command=joke)
+    backbtn50 = Button(root, text="Back", command=main_menu)
+    backbtn51 = Button(root, text="Back", command=main_menu)
+    backbtn52 = Button(root, text="Back", command=main_menu)
+    backbtn53 = Button(root, text="Back", command=main_menu)
+    backbtn54 = Button(root, text="Back", command=main_menu)
+    # backbtn55 = Button(root, text="Back", command=main_menu)
+    # backbtn56 = Button(root, text="Back", command=main_menu)
+    # backbtn57 = Button(root, text="Back", command=main_menu)
+    # backbtn58 = Button(root, text="Back", command=main_menu)
+    # backbtn59 = Button(root, text="Back", command=main_menu)
+    # backbtn60 = Button(root, text="Back", command=main_menu)
+
+
+    backbtn1.grid(row=0, column=0)
+    backbtn2.grid(row=0, column=1)
+    backbtn3.grid(row=0, column=2)
+    backbtn4.grid(row=0, column=3)
+    backbtn5.grid(row=0, column=4)
+    backbtn6.grid(row=0, column=5)
+
+    backbtn7.grid(row=1, column=0)
+    backbtn8.grid(row=1, column=1)
+    backbtn9.grid(row=1, column=2)
+    backbtn10.grid(row=1, column=3)
+    backbtn11.grid(row=1, column=4)
+    backbtn12.grid(row=1, column=5)
+
+    # Row 2
+    backbtn13.grid(row=2, column=0)
+    backbtn14.grid(row=2, column=1)
+    backbtn15.grid(row=2, column=2)
+    backbtn16.grid(row=2, column=3)
+    backbtn17.grid(row=2, column=4)
+    backbtn18.grid(row=2, column=5)
+
+    # Row 3
+    backbtn19.grid(row=3, column=0)
+    backbtn20.grid(row=3, column=1)
+    backbtn21.grid(row=3, column=2)
+    backbtn22.grid(row=3, column=3)
+    backbtn23.grid(row=3, column=4)
+    backbtn24.grid(row=3, column=5)
+
+    # Row 4
+    backbtn25.grid(row=4, column=0)
+    backbtn26.grid(row=4, column=1)
+    backbtn27.grid(row=4, column=2)
+    backbtn28.grid(row=4, column=3)
+    backbtn29.grid(row=4, column=4)
+    backbtn30.grid(row=4, column=5)
+
+    # Row 5
+    backbtn31.grid(row=5, column=0)
+    backbtn32.grid(row=5, column=1)
+    backbtn33.grid(row=5, column=2)
+    backbtn34.grid(row=5, column=3)
+    backbtn35.grid(row=5, column=4)
+    backbtn36.grid(row=5, column=5)
+
+    # Row 6
+    backbtn37.grid(row=6, column=0)
+    backbtn38.grid(row=6, column=1)
+    backbtn39.grid(row=6, column=2)
+    backbtn40.grid(row=6, column=3)
+    backbtn41.grid(row=6, column=4)
+    backbtn42.grid(row=6, column=5)
+
+    # Row 7
+    backbtn43.grid(row=7, column=0)
+    backbtn44.grid(row=7, column=1)
+    backbtn45.grid(row=7, column=2)
+    backbtn46.grid(row=7, column=3)
+    backbtn47.grid(row=7, column=4)
+    backbtn48.grid(row=7, column=5)
+
+    # Row 8
+    backbtn49.grid(row=8, column=0)
+    backbtn50.grid(row=8, column=1)
+    backbtn51.grid(row=8, column=2)
+    backbtn52.grid(row=8, column=3)
+    backbtn53.grid(row=8, column=4)
+    backbtn54.grid(row=8, column=5)
+
+def joke():
+    clear()
+    joke_text = StringVar()
+    joke_label = Label(root, textvariable=joke_text, font=("font2.ttf", 30))
+    joke_label.pack(pady=20)
+
+    fetch_button = Button(root, text="Get Joke", command=lambda: fetch_joke(joke_text), font=("LEMONMILK-Regular.otf", 20), width=10, height=2)
+    fetch_button.pack()
+
+    backbtn = Button(root, text="Back", command=main_menu, font=("LEMONMILK-Regular.otf", 10), width=5, height=1)
+    backbtn.pack(side='top', padx=10, pady=10)
+
+def fetch_joke(joke_text):
+    response = requests.get("https://official-joke-api.appspot.com/jokes/programming/random")
+    joke_data = response.json()[0]
+    joke_text.set(joke_data['setup'] + '\n' + joke_data['punchline'])
+
+
+
+
 
 main_menu()
 root.mainloop()
