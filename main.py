@@ -5,6 +5,8 @@ import customtkinter
 
 mycolour = "#383434"
 mycolour2 = "#ececec"
+mycolour3 = "#FF6961"
+mycolour4 = "77DD77"
 
 root = Tk()
 root.geometry('2560x1440')
@@ -53,13 +55,13 @@ class SiliconShowdown:
                 self.score += int(price)
                 self.update_score()
                 self.buttons[(self.categories.index(category), self.prices.index(price))]['state'] = DISABLED
-                self.buttons[(self.categories.index(category), self.prices.index(price))]['bg'] = 'gray'
+                self.buttons[(self.categories.index(category), self.prices.index(price))]['bg'] = 'mycolour4'
                 self.check_game_over()
             else:
                 self.score -= int(price)
                 self.update_score()
                 self.buttons[(self.categories.index(category), self.prices.index(price))]['state'] = DISABLED
-                self.buttons[(self.categories.index(category), self.prices.index(price))]['bg'] = 'gray'
+                self.buttons[(self.categories.index(category), self.prices.index(price))]['bg'] = 'mycolour3'
                 self.check_game_over()
 
     def update_score(self):
@@ -81,10 +83,12 @@ def main_menu():
 
     playbtn = Button(root, text="Play", command=topicselector, font=("LEMONMILK-Regular.otf", 40), width=10, height=2)
     optionsbtn = Button(root, text="Options", command=options, font=("LEMONMILK-Regular.otf", 40), width=10, height=2)
+    aboutbtn = Button(root, text="About", command=about, font=("LEMONMILK-Regular.otf", 40), width=10, height=2)
     exitbtn = Button(root, text='Exit', command=root.destroy, font=("LEMONMILK-Regular.otf", 40), width=10, height=2)
  
     playbtn.pack(side='top', padx=10, pady=10)
     optionsbtn.pack(side='top', padx=10, pady=10)
+    aboutbtn.pack(side='top', padx=10, pady=10)
     exitbtn.pack(side='top', padx=10, pady=10)
 
 def topicselector():
@@ -160,6 +164,22 @@ def options():
 
     lightmodebtn.pack(side='top', padx=10, pady=10)
     darkmodebtn.pack(side='top', padx=10, pady=10)
+    backbtn.pack(side='top', padx=10, pady=10)
+
+def about():
+    clear()
+
+    root.title("Silicon Showdown - About")
+
+    about_text = "Silicon Showdown is a trivia quiz game that tests your knowledge of computer science and technology. \n" \
+                 "You can choose from various topics and answer questions to earn points. \n" \
+                 "The game is designed to be both fun and educational. \n" \
+                 "Good luck and enjoy!"
+
+    about_label = Label(root, text=about_text, font=("font2.ttf", 50), wraplength=800, justify="left")
+    backbtn = Button(root, text="Back", font=("font2.ttf", 20), command=main_menu)
+
+    about_label.pack(side='top', padx=10, pady=10)
     backbtn.pack(side='top', padx=10, pady=10)
 
 main_menu()
