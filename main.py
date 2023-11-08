@@ -10,9 +10,11 @@ mycolour3 = "#FF6961"
 mycolour4 = "77DD77"
 
 root = Tk()
-root.geometry('2560x1440')
+# root.geometry('2560x1440')
 root.configure(bg=mycolour)
+root.attributes('-fullscreen', True)
 root.title("Silicon Showdown")
+
 
 class SiliconShowdown:
     def __init__(self, root, categories, questions, answers):
@@ -261,13 +263,6 @@ def easteregg():
     backbtn52 = Button(root, text="Back", command=main_menu)
     backbtn53 = Button(root, text="Back", command=main_menu)
     backbtn54 = Button(root, text="Back", command=main_menu)
-    # backbtn55 = Button(root, text="Back", command=main_menu)
-    # backbtn56 = Button(root, text="Back", command=main_menu)
-    # backbtn57 = Button(root, text="Back", command=main_menu)
-    # backbtn58 = Button(root, text="Back", command=main_menu)
-    # backbtn59 = Button(root, text="Back", command=main_menu)
-    # backbtn60 = Button(root, text="Back", command=main_menu)
-
 
     backbtn1.grid(row=0, column=0)
     backbtn2.grid(row=0, column=1)
@@ -283,7 +278,6 @@ def easteregg():
     backbtn11.grid(row=1, column=4)
     backbtn12.grid(row=1, column=5)
 
-    # Row 2
     backbtn13.grid(row=2, column=0)
     backbtn14.grid(row=2, column=1)
     backbtn15.grid(row=2, column=2)
@@ -291,7 +285,6 @@ def easteregg():
     backbtn17.grid(row=2, column=4)
     backbtn18.grid(row=2, column=5)
 
-    # Row 3
     backbtn19.grid(row=3, column=0)
     backbtn20.grid(row=3, column=1)
     backbtn21.grid(row=3, column=2)
@@ -299,7 +292,6 @@ def easteregg():
     backbtn23.grid(row=3, column=4)
     backbtn24.grid(row=3, column=5)
 
-    # Row 4
     backbtn25.grid(row=4, column=0)
     backbtn26.grid(row=4, column=1)
     backbtn27.grid(row=4, column=2)
@@ -307,7 +299,6 @@ def easteregg():
     backbtn29.grid(row=4, column=4)
     backbtn30.grid(row=4, column=5)
 
-    # Row 5
     backbtn31.grid(row=5, column=0)
     backbtn32.grid(row=5, column=1)
     backbtn33.grid(row=5, column=2)
@@ -315,7 +306,6 @@ def easteregg():
     backbtn35.grid(row=5, column=4)
     backbtn36.grid(row=5, column=5)
 
-    # Row 6
     backbtn37.grid(row=6, column=0)
     backbtn38.grid(row=6, column=1)
     backbtn39.grid(row=6, column=2)
@@ -323,7 +313,6 @@ def easteregg():
     backbtn41.grid(row=6, column=4)
     backbtn42.grid(row=6, column=5)
 
-    # Row 7
     backbtn43.grid(row=7, column=0)
     backbtn44.grid(row=7, column=1)
     backbtn45.grid(row=7, column=2)
@@ -331,7 +320,6 @@ def easteregg():
     backbtn47.grid(row=7, column=4)
     backbtn48.grid(row=7, column=5)
 
-    # Row 8
     backbtn49.grid(row=8, column=0)
     backbtn50.grid(row=8, column=1)
     backbtn51.grid(row=8, column=2)
@@ -355,10 +343,6 @@ def fetch_joke(joke_text):
     response = requests.get("https://official-joke-api.appspot.com/jokes/programming/random")
     joke_data = response.json()[0]
     joke_text.set(joke_data['setup'] + '\n' + joke_data['punchline'])
-
-
-
-
 
 main_menu()
 root.mainloop()
